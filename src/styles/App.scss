@@ -1,6 +1,26 @@
 @import './partials/variables';
 
+*{
+    box-sizing: border-box;
+}
 
 body{
-    background-color: $bg;
+    margin: 0;
+    background: rgb(31,55,86);
+    background: radial-gradient(circle at top, rgba(31, 55, 86, 1) 0%, rgba(20, 21, 57, 1) 100%);
+    background-repeat:no-repeat;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: 'Barlow Semi Condensed',
+    sans-serif;
+    font-size: 14px;
+}
+
+.container{
+    width: 700px;
+    margin: 1.5rem auto;
+}
+
+p{
+    margin: 0;
 }

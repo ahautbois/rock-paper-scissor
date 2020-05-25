@@ -1,0 +1,21 @@
+@import './partials/variables';
+
+
+.result{
+    justify-self: end;
+    background: #ffffff;
+    text-align: center;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    .caption{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $score;
+        font-size: 0.75rem;
+    }
+    .number{
+        color: $darkText;
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
