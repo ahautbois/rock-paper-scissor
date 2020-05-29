@@ -40,13 +40,17 @@ function App() {
       <main>
           <ButtonChoice />
       </main>
-      <button onClick={()=> setChoice('paper')}>Paper</button>
-      <button onClick={()=> setChoice('scissor')}>Scissors</button>
-      <button onClick={()=> setChoice('rock')}>Rock</button>
-      <h1>Me: {user}</h1>
-      <hr></hr>
-      <h2>Computer: {computer ? computer : "Waiting user's choice"} </h2>
-      <p>{resultat}</p>
+      <div className="test">
+        <button onClick={()=> setChoice('paper')}>Paper</button>
+        <button onClick={()=> setChoice('scissor')}>Scissors</button>
+        <button onClick={()=> setChoice('rock')}>Rock</button>
+        <h1>Me: {user}</h1>
+        <hr></hr>
+        <h2>Computer: {computer ? computer : "Waiting user's choice"} </h2>
+        <p>{resultat}</p>
+      
+      </div>
+      
     </div>
   );
 }

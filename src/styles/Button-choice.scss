@@ -1,2 +1,58 @@
 @import './partials/variables';
 
+
+
+    
+.btn-choice {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    border: 18px solid $scissor2;
+    background: $outline;
+    background: linear-gradient(180deg, $outline 50%, #ffffff 50%);
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        background-color: $scissor1;
+        border-radius: 50%;
+        position: relative;
+        z-index: -1;
+        transform: translate(-24px, -13px);
+    }
+
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -47%);
+        z-index: 3;
+        background-color: #E5E4E1;
+        border-radius: 50%;
+        width: 114px;
+        height: 107px;
+        &::before{
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &.paper::before {
+            content: url('../img/icon-paper.svg');
+        }
+    }
+    &:hover{
+        border: 18px solid $scissor1;
+    }
+}
+
+

@@ -3,9 +3,11 @@ import '../styles/Button-choice.scss';
 
 function ButtonChoice() {
     return(
-        <button className="btn">
+           
+        <button className="btn-choice">
             <span className="icon paper"></span>
         </button>
+            
     )
 }
 
