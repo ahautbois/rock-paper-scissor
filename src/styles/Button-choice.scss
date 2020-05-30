@@ -1,5 +1,11 @@
 @import './partials/variables';
+@import './partials/mixins';
 
+
+$icons: 
+    "scissors" $scissor1 $scissor2,
+    "paper" $paper1 $paper2,
+    "rock" $rock1 $rock2;
 
 
     
@@ -12,22 +18,18 @@
     width: 150px;
     height: 150px;
     position: relative;
-    border: 18px solid $scissor2;
     background: $outline;
     background: linear-gradient(180deg, $outline 50%, #ffffff 50%);
-
     &::after {
         content: '';
         display: inline-block;
         width: 150px;
         height: 150px;
-        background-color: $scissor1;
         border-radius: 50%;
         position: relative;
         z-index: -1;
         transform: translate(-24px, -13px);
     }
-
 
     .icon {
         position: absolute;
@@ -46,13 +48,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        &.paper::before {
-            content: url('../img/icon-paper.svg');
+        
+    }
+
+    @each $name, $color1, $color2 in $icons {
+        &.#{$name}{ 
+            @include icon($color1, $color2, $name)
         }
     }
-    &:hover{
-        border: 18px solid $scissor1;
-    }
+
 }
 
 

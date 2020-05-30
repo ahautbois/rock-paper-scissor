@@ -1,9 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
-import ButtonChoice from './components/ButtonChoice';
+import SetOne from './components/SetOne';
+import SetTwo from './components/SetTwo';
+
 import './styles/App.scss';
 
 function App() {
+
+
+  const choicesList = ['paper', 'scissors', 'rock'];
+
+
+  // TEST
+
 
   const [user, setChoice] = useState(null);
   const [computer, setComputer] = useState(null);
@@ -38,7 +47,8 @@ function App() {
     <div className="App container">
       <Header />
       <main>
-          <ButtonChoice />
+          {user ? <SetTwo name={user}/> : <SetOne choicesList={choicesList} option={setChoice}/>}
+          <h1>Me: {user}</h1>
       </main>
       <div className="test">
         <button onClick={()=> setChoice('paper')}>Paper</button>

@@ -1,13 +1,11 @@
 import React from 'react';
 import '../styles/Button-choice.scss';
 
-function ButtonChoice() {
+function ButtonChoice({name, option}) {
     return(
-           
-        <button className="btn-choice">
-            <span className="icon paper"></span>
-        </button>
-            
+        <button className={`btn-choice ${name}`} onClick={()=> option ? option(name): null}>
+            <span className="icon"></span>
+        </button>  
     )
 }
 

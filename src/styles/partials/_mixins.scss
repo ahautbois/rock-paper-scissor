@@ -1,0 +1,15 @@
+@import './partials/variables';
+
+@mixin icon($color1, $color2, $icon){
+    border: 18px solid $color2;
+
+    &::after {
+        background-color: $color1;
+    }
+
+    .icon {
+        &::before {
+            content: url('../../img/icon-#{$icon}.svg');
+        }
+    }
+}
