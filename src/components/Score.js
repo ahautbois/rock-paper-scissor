@@ -3,7 +3,7 @@ import '../styles/Score.scss';
 
 function Score() {
     return(
-        <div className="result">
+        <div className="score">
             <p className="caption">Score</p>
             <p className="number">12</p>
         </div>

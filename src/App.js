@@ -9,7 +9,7 @@ function App() {
 
 
   const choicesList = ['paper', 'scissors', 'rock'];
-
+  const compChoice = choicesList[Math.floor(Math.random() * choicesList.length)];
 
   // TEST
 
@@ -21,34 +21,38 @@ function App() {
 
   const result = () => {
     if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissor') || (user === 'scissor' && computer === 'paper')) {
-      setResult('win');
+      setResult('You win');
     } else if ((computer === 'paper' && user === 'rock') || (computer === 'rock' && user === 'scissor') || (computer === 'scissor' && user === 'paper')) {
-      setResult('lose');
+      setResult('You lose');
     } else if (computer === user) {
-      setResult('tie');
+      setResult("it's a tie");
     } else {
       setResult('not valid');
     }
   };
 
-  useEffect(() => {
-    const elemList = ['rock', 'paper', 'scissor'];
-    const compChoice = elemList[Math.floor(Math.random() * elemList.length)];
-    if(user) {
-      setComputer(compChoice);
-      result();
-    }
+  // useEffect(() => {
+  //   const elemList = ['rock', 'paper', 'scissor'];
+  //   const compChoice = elemList[Math.floor(Math.random() * elemList.length)];
+  //   if(user) {
+  //     setComputer(compChoice);
+  //     result();
+  //   }
 
-  });
+  // });
 
   
+  useEffect(() => {
+    user && setComputer(compChoice);
+  }, [user])
 
   return (
     <div className="App container">
       <Header />
       <main>
-          {user ? <SetTwo name={user}/> : <SetOne choicesList={choicesList} option={setChoice}/>}
+        {user ? <SetTwo name={user} computer={computer} computerRand={setComputer} result={result} resultat={resultat}/> : <SetOne choicesList={choicesList} option={setChoice}/>}
           <h1>Me: {user}</h1>
+          <p>{compChoice}</p>
       </main>
       <div className="test">
         <button onClick={()=> setChoice('paper')}>Paper</button>

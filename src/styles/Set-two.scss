@@ -1,11 +1,16 @@
+@import './partials/variables';
+
+
 .set-two{
     margin-top: 2.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    align-items: center;
     align-content: start;
     text-align: center;
+    &.show-result{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     h2{
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -13,10 +18,21 @@
         margin-bottom: 3rem;
     }
     .spot{
-        width: 180px;
-        height: 180px;
-        background-color: #141539;
-        border-radius: 50%;
+        position: relative;
+        &::before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            height: 180px;
+            background-color: #141539;
+            border-radius: 50%;
+        }
+        width: 220px;
+        height: 220px;
         display: inline-block;
     }
     .btn-choice{
@@ -34,6 +50,32 @@
             height: 164px;
             &::before{
                 transform: translate(-50%, -50%) scale(1.5);
+            }
+        }
+    }
+    .result{
+        text-align: center;
+        align-self: center;
+        .text{
+            font-size: 3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .btn-play{
+            outline: none;
+            border: none;
+            cursor: pointer;
+            padding: 1rem 3rem;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            &.win{
+                color: $darkText;
+            }
+            &.lose{
+                color: $rock2;
             }
         }
     }
