@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/Score.scss';
 
-function Score() {
+function Score({score}) {
     return(
         <div className="score">
-            <p className="caption">Score</p>
-            <p className="number">12</p>
+            <p className="caption">score</p>
+            <p className="number">{score}</p>
         </div>
     )
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import Score from './Score';
 import '../styles/Header.scss';
 
-function Header() {
+function Header({score}) {
     return(
         <header>
                 <h1>Rock <span>Paper</span> <span>scissor</span></h1>
-                <Score />
+                <Score score={score}/>
         </header>
     )
 }

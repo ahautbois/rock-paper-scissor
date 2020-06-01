@@ -9,62 +9,58 @@ function App() {
 
 
   const choicesList = ['paper', 'scissors', 'rock'];
+  
   const compChoice = choicesList[Math.floor(Math.random() * choicesList.length)];
-
-  // TEST
-
 
   const [user, setChoice] = useState(null);
   const [computer, setComputer] = useState(null);
-  const [resultat, setResult] = useState(null);
+  const [result, setResult] = useState(null);
+  let [score, setScore] = useState(parseInt(localStorage.getItem('score')) || 0);
 
-
-  const result = () => {
-    if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissor') || (user === 'scissor' && computer === 'paper')) {
-      setResult('You win');
-    } else if ((computer === 'paper' && user === 'rock') || (computer === 'rock' && user === 'scissor') || (computer === 'scissor' && user === 'paper')) {
-      setResult('You lose');
-    } else if (computer === user) {
-      setResult("it's a tie");
-    } else {
-      setResult('not valid');
-    }
-  };
-
-  // useEffect(() => {
-  //   const elemList = ['rock', 'paper', 'scissor'];
-  //   const compChoice = elemList[Math.floor(Math.random() * elemList.length)];
-  //   if(user) {
-  //     setComputer(compChoice);
-  //     result();
-  //   }
-
-  // });
 
   
+  const showResult = () => {
+      
+    if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper')) {
+      setResult('You win');
+      console.log(`winbefore: ${score}`);
+      
+      setScore(score + 1);
+      console.log(`winafter: ${score}`);
+
+    } else if ((computer === 'paper' && user === 'rock') || (computer === 'rock' && user === 'scissors') || (computer === 'scissors' && user === 'paper')) {
+      setResult('You lose');
+      if (score > 0){
+        console.log(`losebefore: ${score}`);
+
+        setScore(score - 1);
+        console.log(`loseafter: ${score}`);
+
+      }
+    } else if (computer === user) {
+      setResult("it's a tie");
+      console.log(`tiebefore: ${score}`);
+
+      // setScore(score);
+      console.log(`tieafter: ${score}`);
+
+    } else {
+      setResult('Error');
+    }
+    
+    
+  };
+
   useEffect(() => {
-    user && setComputer(compChoice);
-  }, [user])
+    localStorage.setItem('score', score);
+  }, [score]);
 
   return (
     <div className="App container">
-      <Header />
+      <Header score={score}/ >
       <main>
-        {user ? <SetTwo name={user} computer={computer} computerRand={setComputer} result={result} resultat={resultat}/> : <SetOne choicesList={choicesList} option={setChoice}/>}
-          <h1>Me: {user}</h1>
-          <p>{compChoice}</p>
-      </main>
-      <div className="test">
-        <button onClick={()=> setChoice('paper')}>Paper</button>
-        <button onClick={()=> setChoice('scissor')}>Scissors</button>
-        <button onClick={()=> setChoice('rock')}>Rock</button>
-        <h1>Me: {user}</h1>
-        <hr></hr>
-        <h2>Computer: {computer ? computer : "Waiting user's choice"} </h2>
-        <p>{resultat}</p>
-      
-      </div>
-      
+        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} /> : <SetOne choicesList={choicesList} option={setChoice}/>}
+      </main>   
     </div>
   );
 }
