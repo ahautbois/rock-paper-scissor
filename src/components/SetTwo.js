@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ButtonChoice from './ButtonChoice';
 import '../styles/Set-two.scss';
 
-function SetTwo({user, computer, setComp, compChoice, showResult, result}) {
+function SetTwo({user, computer, setComp, compChoice, showResult, result, replay}) {
 
     const [isResult, setIsResult] = useState(true);
 
@@ -25,7 +25,7 @@ function SetTwo({user, computer, setComp, compChoice, showResult, result}) {
             </div>
             {result && <div className="result">
                 <p className="text">{result}</p>
-                <button className="btn-play">Play again</button>
+                <button className="btn-play" onClick={replay}>Play again</button>
             </div> }
            
 

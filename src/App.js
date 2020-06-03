@@ -51,6 +51,12 @@ function App() {
     
   };
 
+  const playAgain = () => {
+    setChoice(null);
+    setComputer(null);
+    setResult(null);
+  }
+
   useEffect(() => {
     localStorage.setItem('score', score);
   }, [score]);
@@ -59,7 +65,7 @@ function App() {
     <div className="App container">
       <Header score={score}/ >
       <main>
-        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} /> : <SetOne choicesList={choicesList} option={setChoice}/>}
+        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} /> : <SetOne choicesList={choicesList} option={setChoice}/>}
       </main>   
     </div>
   );
