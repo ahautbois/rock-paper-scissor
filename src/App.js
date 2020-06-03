@@ -22,14 +22,14 @@ function App() {
   const showResult = () => {
       
     if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper')) {
-      setResult('You win');
+      setResult('win');
+
       console.log(`winbefore: ${score}`);
-      
       setScore(score + 1);
       console.log(`winafter: ${score}`);
 
     } else if ((computer === 'paper' && user === 'rock') || (computer === 'rock' && user === 'scissors') || (computer === 'scissors' && user === 'paper')) {
-      setResult('You lose');
+      setResult('lose');
       if (score > 0){
         console.log(`losebefore: ${score}`);
 
@@ -38,17 +38,17 @@ function App() {
 
       }
     } else if (computer === user) {
-      setResult("it's a tie");
+      setResult("tie");
       console.log(`tiebefore: ${score}`);
 
       // setScore(score);
       console.log(`tieafter: ${score}`);
 
     } else {
-      setResult('Error');
+      setResult('error');
     }
     
-    
+  
   };
 
   const playAgain = () => {
@@ -62,10 +62,10 @@ function App() {
   }, [score]);
 
   return (
-    <div className="App container">
+    <div className="App">
       <Header score={score}/ >
       <main>
-        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} /> : <SetOne choicesList={choicesList} option={setChoice}/>}
+        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} /> : <SetOne choicesList={choicesList} option={setChoice} compChoice={compChoice} setComp={setComputer}/>}
       </main>   
     </div>
   );

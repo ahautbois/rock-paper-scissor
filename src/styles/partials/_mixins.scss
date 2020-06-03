@@ -3,7 +3,7 @@
 @mixin icon($color1, $color2, $icon){
     border: 18px solid $color2;
 
-    &::after {
+    .shadow-circle {
         background-color: $color1;
     }
 

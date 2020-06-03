@@ -20,15 +20,16 @@ $icons:
     position: relative;
     background: $outline;
     background: linear-gradient(180deg, $outline 50%, #ffffff 50%);
-    &::after {
-        content: '';
+    .shadow-circle {
         display: inline-block;
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
         z-index: -1;
-        transform: translate(-24px, -13px);
+        transform: translate(-50%, -45%);
     }
 
     .icon {
