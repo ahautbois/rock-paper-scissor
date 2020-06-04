@@ -1,0 +1,70 @@
+@import './partials/variables';
+
+footer {
+    text-align: right;
+    padding: 0 2rem;
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    .btn-rules{
+        background: none;
+        outline: none;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        padding: 0.5rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        &:hover{
+            background-color: #ffffff;
+            color: $darkText;
+        }
+    }
+    .modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        background-color: #ffffff;
+        color: $darkText;
+        padding: 1rem 2rem 1.5rem;
+        border-radius: 0.5rem;
+        h2{
+            font-size: 2rem;
+            margin: 0 0 3rem;
+        }
+        .container-title{
+            position: relative;
+            .cross{
+                border: none;
+                background: none;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                display: inline-block;
+                height: 60%;
+                width: 20px;
+                cursor: pointer;
+                &:before, &:after{
+                    content: '';
+                    display: inline-block;
+                    height: 20px;
+                    width: 3px;
+                    background: $grey;
+                    position: absolute;
+                    top: 0;
+                    left: 8px;
+                }
+                &::before{
+                    transform: rotate(-45deg);
+                }
+                &::after {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}

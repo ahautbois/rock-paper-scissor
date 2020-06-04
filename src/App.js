@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import SetOne from './components/SetOne';
 import SetTwo from './components/SetTwo';
+import Footer from './components/Footer';
 
 import './styles/App.scss';
 
@@ -23,29 +24,16 @@ function App() {
       
     if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper')) {
       setResult('win');
-
-      console.log(`winbefore: ${score}`);
       setScore(score + 1);
-      console.log(`winafter: ${score}`);
 
-    } else if ((computer === 'paper' && user === 'rock') || (computer === 'rock' && user === 'scissors') || (computer === 'scissors' && user === 'paper')) {
-      setResult('lose');
-      if (score > 0){
-        console.log(`losebefore: ${score}`);
-
-        setScore(score - 1);
-        console.log(`loseafter: ${score}`);
-
-      }
     } else if (computer === user) {
       setResult("tie");
-      console.log(`tiebefore: ${score}`);
-
-      // setScore(score);
-      console.log(`tieafter: ${score}`);
 
     } else {
-      setResult('error');
+      setResult('lose');
+      if (score > 0) {
+        setScore(score - 1);
+      }
     }
     
   
@@ -63,10 +51,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header score={score}/ >
+      <Header score={score} />
       <main>
         {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} /> : <SetOne choicesList={choicesList} option={setChoice} compChoice={compChoice} setComp={setComputer}/>}
       </main>   
+      <Footer  />
     </div>
   );
 }
