@@ -5,7 +5,9 @@
 $icons: 
     "scissors" $scissor1 $scissor2,
     "paper" $paper1 $paper2,
-    "rock" $rock1 $rock2;
+    "rock" $rock1 $rock2,
+    "lizard" $lizard1 $lizard2,
+    "spock" $spock1 $spock2;
 
 
     
@@ -15,15 +17,15 @@ $icons:
     cursor: pointer;
     display: inline-block;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     position: relative;
     background: $outline;
     background: linear-gradient(180deg, $outline 50%, #ffffff 50%);
     .shadow-circle {
         display: inline-block;
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         position: absolute;
         top: 50%;
@@ -40,8 +42,8 @@ $icons:
         z-index: 3;
         background-color: #E5E4E1;
         border-radius: 50%;
-        width: 114px;
-        height: 107px;
+        width: 104px;
+        height: 97px;
         &::before{
             display: inline-block;
             position: absolute;

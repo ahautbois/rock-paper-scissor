@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import imgRules from '../img/image-rules-opti.svg';
+import imgRules from '../img/image-rules-bonus-opti.svg';
 import '../styles/Footer.scss';
 
 function Footer() {
@@ -14,7 +14,7 @@ function Footer() {
                         <button className="cross" onClick={() => setShow(false)}></button>
                     </div>
                     <div className="container-img">
-                        <img src={imgRules} />
+                        <img src={imgRules}  alt="buttons about rules"/>
                     </div>
                 </div>
             }

@@ -9,7 +9,7 @@ import './styles/App.scss';
 function App() {
 
 
-  const choicesList = ['paper', 'scissors', 'rock'];
+  const choicesList = ['scissors', 'paper', 'rock', 'lizard', 'spock'];
   
   const compChoice = choicesList[Math.floor(Math.random() * choicesList.length)];
 
@@ -22,7 +22,8 @@ function App() {
   
   const showResult = () => {
       
-    if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper')) {
+    if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper') || (user === 'rock' && computer === 'lizard') || (user === 'lizard' && computer === 'spock') || (user === 'spock' && computer === 'scissors') || (user === 'scissors' && computer === 'lizard') || (user === 'paper' && computer === 'spock') || (user === 'lizard' && computer === 'paper') ||
+    (user === 'spock' && computer === 'rock')) {
       setResult('win');
       setScore(score + 1);
 
@@ -43,7 +44,7 @@ function App() {
     setChoice(null);
     setComputer(null);
     setResult(null);
-  }
+  };
 
   useEffect(() => {
     localStorage.setItem('score', score);

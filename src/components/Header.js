@@ -5,7 +5,7 @@ import '../styles/Header.scss';
 function Header({score}) {
     return(
         <header className="container">
-                <h1>Rock <span>Paper</span> <span>scissor</span></h1>
+                <h1>Rock <span>Paper</span> <span>scissors</span><span>lizard</span><span>spock</span></h1>
                 <Score score={score}/>
         </header>
     )
