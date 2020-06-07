@@ -1,7 +1,6 @@
 .set{
     position: relative;
-    min-height: 500px;
-    padding-top: 2.75rem;
+    height: 100%;
     &:before{
         content: url('../img/bg-pentagon.svg');
         position: absolute;
@@ -30,5 +29,24 @@
             transform: translate(-170%, -79%);
         }
 
+    }
+}
+
+@media (max-width: 480px){
+    .set{
+        transform: scale(0.8);
+        margin: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .set {
+        transform: scale(0.7) translateY(-15%);
+    }
+}
+
+@media (max-width: 320px) {
+    .set {
+        transform: scale(0.6) translateY(-15%);
     }
 }

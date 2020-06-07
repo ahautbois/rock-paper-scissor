@@ -17,6 +17,7 @@ function App() {
   const [computer, setComputer] = useState(null);
   const [result, setResult] = useState(null);
   let [score, setScore] = useState(parseInt(localStorage.getItem('score')) || 0);
+  const [showCompChoice, setShowCompChoice] = useState(false);
 
 
   
@@ -44,6 +45,7 @@ function App() {
     setChoice(null);
     setComputer(null);
     setResult(null);
+    setShowCompChoice(false);
   };
 
   useEffect(() => {
@@ -54,7 +56,7 @@ function App() {
     <div className="App">
       <Header score={score} />
       <main>
-        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} /> : <SetOne choicesList={choicesList} option={setChoice} compChoice={compChoice} setComp={setComputer}/>}
+        {user ? <SetTwo user={user} compChoice={compChoice} computer={computer} setComp={setComputer} showResult={showResult} result={result} replay={playAgain} showCompChoice={showCompChoice} setShowCompChoice={setShowCompChoice} /> : <SetOne choicesList={choicesList} option={setChoice} compChoice={compChoice} setComp={setComputer}/>}
       </main>   
       <Footer  />
     </div>

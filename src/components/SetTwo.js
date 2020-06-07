@@ -2,15 +2,23 @@ import React, {useEffect} from 'react';
 import ButtonChoice from './ButtonChoice';
 import '../styles/Set-two.scss';
 
-function SetTwo({user, computer, showResult, result, replay}) {
+function SetTwo({user, computer, showResult, result, replay, showCompChoice, setShowCompChoice}) {
 
 
     useEffect(() => {
         
-        if (user && computer) {
-            showResult();
-        }
-        
+        const timerCompChoice = setTimeout(() => {
+            if (user && computer) {
+                setShowCompChoice(true);
+            }
+        }, 500);
+       
+        const timer = setTimeout(() => {
+            if (user && computer) {
+                showResult();
+            }
+        }, 1000);
+        return () => clearTimeout(timer, timerCompChoice);
 
     }, [computer, user]);
 
@@ -43,7 +51,7 @@ function SetTwo({user, computer, showResult, result, replay}) {
                 <h2>The house picked</h2>
                 <div className={`${result === 'lose' ? 'win' : ''}`}>
                     <div className="container-btn">
-                        {computer ? <ButtonChoice  name={computer} />  : <div className="spot"></div>}
+                        {showCompChoice ? <ButtonChoice  name={computer} />  : <div className="spot"></div>}
                     </div>
                     {result === 'lose' ? winCircle : null}
                 </div>
