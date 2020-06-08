@@ -11,13 +11,13 @@ function SetTwo({user, computer, showResult, result, replay, showCompChoice, set
             if (user && computer) {
                 setShowCompChoice(true);
             }
-        }, 1000);
+        }, 500);
        
         const timer = setTimeout(() => {
             if (user && computer) {
                 showResult();
             }
-        }, 2000);
+        }, 1000);
         return () => clearTimeout(timer, timerCompChoice);
 
     }, [computer, user]);
