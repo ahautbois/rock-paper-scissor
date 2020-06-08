@@ -11,13 +11,13 @@ function SetTwo({user, computer, showResult, result, replay, showCompChoice, set
             if (user && computer) {
                 setShowCompChoice(true);
             }
-        }, 500);
+        }, 1000);
        
         const timer = setTimeout(() => {
             if (user && computer) {
                 showResult();
             }
-        }, 1000);
+        }, 2000);
         return () => clearTimeout(timer, timerCompChoice);
 
     }, [computer, user]);
@@ -32,9 +32,9 @@ function SetTwo({user, computer, showResult, result, replay, showCompChoice, set
 
     return(
         <div className={`set-two ${result ? 'show-result' : 'container'}`}>
-            <div>
+            <div className="bloc bloc-user">
                 <h2>You picked</h2>
-                <div className={`${result === 'win' ? 'win' : ''}`}>
+                <div className={`choice ${result === 'win' ? 'win' : ''}`}>
                     <div className="container-btn">
                         <ButtonChoice  name={user}/>
                     </div>
@@ -47,9 +47,9 @@ function SetTwo({user, computer, showResult, result, replay, showCompChoice, set
                 <button className={`btn-play`} onClick={replay}>Play again</button>
             </div> }
 
-            <div>
+            <div className="bloc bloc-computer">
                 <h2>The house picked</h2>
-                <div className={`${result === 'lose' ? 'win' : ''}`}>
+                <div className={`choice ${result === 'lose' ? 'win' : ''}`}>
                     <div className="container-btn">
                         {showCompChoice ? <ButtonChoice  name={computer} />  : <div className="spot"></div>}
                     </div>

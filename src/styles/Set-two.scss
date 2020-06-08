@@ -141,3 +141,89 @@
         }
     }
 }
+
+@media (max-width: 576px) {
+    .set-two{
+        &.show-result{
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "user computer" "result result";
+            width: 100%;
+            row-gap: 2rem;
+            .bloc-user {
+                grid-area: user;
+            }
+
+            .bloc-computer {
+                grid-area: computer;
+            }
+        }
+        .bloc{
+            display: grid;
+            order: 1;
+            h2{
+                order: 2;
+                margin-bottom: 0;
+                margin-top: 1.5rem;
+            }
+            .choice{
+                order: 1;
+            }
+        }
+        .result{
+            order: 2;
+            grid-area: result;
+        }
+        .container-btn{
+            position: relative;
+            z-index: 5;
+        }
+        .btn-choice{
+            width: 140px;
+            height: 140px;
+            border-width: 18px;
+            .shadow-circle{
+                width: 140px;
+                height: 140px;
+            }
+            .icon{
+                width: 104px;
+                height: 97px;
+                &::before {
+                    transform: translate(-50%, -50%) scale(0.8);
+                }
+            }
+        }
+        .spot{
+            width: 140px;
+            height: 140px;
+            &:before{
+                width: 100px;
+                height: 100px;
+            }
+        }
+        .win{
+            width: 140px;
+            height: 140px;
+            .circle-win{
+                width: 140px;
+                height: 140px;
+                span{
+                    &:first-child {
+                        width: 220px;
+                        height: 220px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 320px;
+                        height: 320px;
+                    }
+
+                    &:last-child {
+                        width: 400px;
+                        height: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
