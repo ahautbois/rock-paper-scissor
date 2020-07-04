@@ -3,13 +3,14 @@ import Header from './components/Header';
 import SetOne from './components/SetOne';
 import SetTwo from './components/SetTwo';
 import Footer from './components/Footer';
+import data from './gameData';
 
 import './styles/App.scss';
 
 function App() {
 
 
-  const choicesList = ['scissors', 'paper', 'rock', 'lizard', 'spock'];
+  const choicesList = Object.keys(data);
   
   const compChoice = choicesList[Math.floor(Math.random() * choicesList.length)];
 
@@ -22,22 +23,20 @@ function App() {
 
   
   const showResult = () => {
-      
-    if ((user === 'paper' && computer === 'rock') || (user === 'rock' && computer === 'scissors') || (user === 'scissors' && computer === 'paper') || (user === 'rock' && computer === 'lizard') || (user === 'lizard' && computer === 'spock') || (user === 'spock' && computer === 'scissors') || (user === 'scissors' && computer === 'lizard') || (user === 'paper' && computer === 'spock') || (user === 'lizard' && computer === 'paper') ||
-    (user === 'spock' && computer === 'rock')) {
-      setResult('win');
+    
+    const resultData = data[user][computer].result;
+
+    setResult(resultData);
+
+    if (resultData === 'win') {
       setScore(score + 1);
-
-    } else if (computer === user) {
-      setResult("tie");
-
-    } else {
-      setResult('lose');
+    } else if (resultData === 'lose') {
       if (score > 0) {
         setScore(score - 1);
       }
+    } else {
+      setScore(score);
     }
-    
   
   };
 
