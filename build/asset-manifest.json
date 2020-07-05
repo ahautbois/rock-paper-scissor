@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05c307e5.chunk.css",
+    "main.js": "/static/js/main.bacf1776.chunk.js",
+    "main.js.map": "/static/js/main.bacf1776.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.56b65086.js",
+    "runtime-main.js.map": "/static/js/runtime-main.56b65086.js.map",
+    "static/js/2.688e58fc.chunk.js": "/static/js/2.688e58fc.chunk.js",
+    "static/js/2.688e58fc.chunk.js.map": "/static/js/2.688e58fc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.175cc418f96314a9ec6aea808785a9c3.js": "/precache-manifest.175cc418f96314a9ec6aea808785a9c3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.05c307e5.chunk.css.map": "/static/css/main.05c307e5.chunk.css.map",
+    "static/js/2.688e58fc.chunk.js.LICENSE.txt": "/static/js/2.688e58fc.chunk.js.LICENSE.txt",
+    "static/media/Set-one.scss": "/static/media/bg-pentagon.aced7052.svg",
+    "static/media/Button-choice.scss": "/static/media/icon-spock.b6446e8e.svg",
+    "static/media/image-rules-bonus-opti.svg": "/static/media/image-rules-bonus-opti.a5ea827b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.56b65086.js",
+    "static/js/2.688e58fc.chunk.js",
+    "static/css/main.05c307e5.chunk.css",
+    "static/js/main.bacf1776.chunk.js"
+  ]
+}
