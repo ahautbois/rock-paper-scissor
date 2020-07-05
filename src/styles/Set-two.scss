@@ -134,20 +134,20 @@
     }
 }
 
-@media (max-width: 768px){
+
+@media (max-width: 992px){
     .set-two{
         &.show-result{
-            width: 90%;
+            width: 100%;
         }
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .set-two{
         &.show-result{
             grid-template-columns: 1fr 1fr;
             grid-template-areas: "user computer" "result result";
-            width: 100%;
             row-gap: 2rem;
             .bloc-user {
                 grid-area: user;

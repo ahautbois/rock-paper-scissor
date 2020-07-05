@@ -26,8 +26,9 @@ footer {
         text-align: left;
         background-color: #ffffff;
         color: $darkText;
-        padding: 1rem 2rem 1.5rem;
+        padding: 1rem 2rem 3rem;
         border-radius: 0.5rem;
+        z-index: 1080;
         h2{
             font-size: 2rem;
             margin: 0 0 3rem;
@@ -69,5 +70,17 @@ footer {
 @media (max-width: 768px){
     footer{
         text-align: center;
+        .modal{
+            width: 70%;
+        }
+    }
+
+}
+
+@media (max-width: 576px){
+    .footer {
+        .modal{
+            width: 90%;
+        }
     }
 }

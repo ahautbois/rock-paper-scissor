@@ -32,21 +32,10 @@
     }
 }
 
-@media (max-width: 480px){
-    .set{
-        transform: scale(0.8);
-        margin: 0;
-    }
-}
 
-@media (max-width: 375px) {
-    .set {
-        transform: scale(0.7) translateY(-15%);
-    }
-}
-
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .set {
         transform: scale(0.6) translateY(-15%);
+        margin: 3rem;
     }
 }

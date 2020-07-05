@@ -33,9 +33,27 @@ p{
     padding-top: 1.75rem;
 }
 
+img{
+    width: 100%;
+}
+
 @media (max-width: 992px){
     .container{
         width: 90%;
     }
+    main {
+        overflow: hidden;
+    }
 }
 
+@media (max-width: 768px){
+    main {
+        height: 65vh;
+    }
+}
+
+@media (max-width: 576px){
+    .App {
+        padding-top: 1rem;
+    }
+}
