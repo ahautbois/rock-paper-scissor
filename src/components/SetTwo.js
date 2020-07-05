@@ -19,7 +19,7 @@ function SetTwo({user, computer, showResult, result, replay, showCompChoice, set
             }
         }, 1000);
         return () => clearTimeout(timer, timerCompChoice);
-
+        // eslint-disable-next-line
     }, [computer, user]);
 
     const winCircle = (
